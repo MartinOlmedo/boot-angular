@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RMO ESTUDIANTES</title>
+</head>
+<body ng-app="studentsApp">
+	<script src="./lib/angular.min.js"></script>
+	<script src="./lib/angular-resource.min.js"></script>
+	<script src="./lib/angular-route.min.js"></script>
+	<script src="./js/myAppFile.js"></script>
+	<script src="./js/stController.js"></script>
+	<script src="./js/stDirective.js"></script>
+	
+	
+	<h1>RMO estudiantes !!</h1>
+	<hr>
+	<div ng-controller="studentsController">
+		
+		Buenas tardes {{nombre | uppercase}}; <br><hr>
+		
+		<p><a href="#">Principal</a></p>
+
+		<a href="#add">Aniadir</a>&nbsp;&nbsp;&nbsp;
+		<a href="#edit">Editar</a>&nbsp;&nbsp;&nbsp;
+		<a href="#remove">Borrar</a>&nbsp;&nbsp;&nbsp;
+		
+		<div ng-view></div>
+		
+		<div ng-hide="true" >
+			{{listaAmigos | json}};
+			<ol>
+		    	<li ng-repeat="x in listaAmigos | orderBy:'nombre'">
+			      {{ x }}
+			    </li>
+		  	</ol>
+		  	<my-directive></my-directive>
+		  	<button ng-click="getListaEstudiantes()">DI HOLAAA !</button>
+		  	<hr><hr><hr>
+		  	<p ng-repeat="st in listaEstudiantes | orderBy:'id'">{{st.id}}==>> {{st.name}} ==>> {{st.subject}} </p> -->
+		</div>
+		
+	</div>
+	
+</body>
+</html>
