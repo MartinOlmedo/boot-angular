@@ -6,11 +6,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import demo.modelo.Student;
 
 @SpringBootApplication
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan("demo")
 public class HelloGootApplication {
 	
 	public static List<Student> hmStudent;

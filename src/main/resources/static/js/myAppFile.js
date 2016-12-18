@@ -1,16 +1,22 @@
 var app = angular.module( 'studentsApp',['ngRoute','ngResource'] )
-.config(function($routeProvider){
+.config(function($routeProvider,$locationProvider){
 	
 	$routeProvider
+	.when('/home', {
+        templateUrl : '/index.html'
+    })
     .when('/add', {
-        templateUrl : 'add.htm'
+        templateUrl : '/parciales/add.html'
     })
     .when('/edit', {
-        templateUrl : 'edit.htm'
+        templateUrl : 'parciales/edit.html'
     })
     .when('/remove', {
-        templateUrl : 'remove.htm'
-    });
+        templateUrl : 'parciales/remove.html'
+    })
+    .otherwise(
+        { redirectTo: '/'}
+    );
 
 	// use the HTML5 History API
 	$locationProvider.html5Mode(true);

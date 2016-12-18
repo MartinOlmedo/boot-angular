@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>RMO ESTUDIANTES</title>
+ <base href="/index.html">
 </head>
 <body ng-app="studentsApp">
 	<script src="./lib/angular.min.js"></script>
@@ -19,11 +20,11 @@
 		
 		Buenas tardes {{nombre | uppercase}}; <br><hr>
 		
-		<p><a href="#">Principal</a></p>
+		<p><a href="/home">Principal</a></p>
 
-		<a href="#add">Aniadir</a>&nbsp;&nbsp;&nbsp;
-		<a href="#edit">Editar</a>&nbsp;&nbsp;&nbsp;
-		<a href="#remove">Borrar</a>&nbsp;&nbsp;&nbsp;
+		<a href="/add">Aniadir</a>&nbsp;&nbsp;&nbsp;
+		<a href="/edit">Editar</a>&nbsp;&nbsp;&nbsp;
+		<a href="/remove">Borrar</a>&nbsp;&nbsp;&nbsp;
 		
 		<div ng-view></div>
 		
