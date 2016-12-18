@@ -6,35 +6,29 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 import demo.modelo.Student;
+import demo.modelo.Subject;
 
 @SpringBootApplication
-
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan("demo")
 public class HelloGootApplication {
 	
 	public static List<Student> hmStudent;
-	public static Map<Integer, String> subjects;
+	public static List<Subject> subjects;
 	
 	static{
 		hmStudent =  new ArrayList<Student>(); 
-		subjects = new HashMap<Integer, String>();
+		subjects = new ArrayList<Subject>(); 
 		
-		subjects.put(1, "matematicas");
-		subjects.put(2, "geografia");
-		subjects.put(3, "historia");
-		subjects.put(4, "filosofia");
-		subjects.put(5, "ingles");
+		subjects.add( new Subject( "11", "matematicas" ) );
+		subjects.add( new Subject("22", "geografia") );
+		subjects.add( new Subject("33", "historia") );
+		subjects.add( new Subject( "44", "filosofia" ) );
+		subjects.add( new Subject("55", "ingles"));
 		
 		for( int i = 1; i<=5; i++ ){
-			hmStudent.add( new Student(null, "Estudiante_"+i, subjects.get(i)) );
+			hmStudent.add( new Student(null, "Estudiante_"+i, subjects.get(i-1).getName()) );
 			try {Thread.sleep(5);} catch (InterruptedException e) {}
 		}
 	}

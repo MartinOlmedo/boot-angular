@@ -20,13 +20,16 @@
 		
 		Buenas tardes {{nombre | uppercase}}; <br><hr>
 		
-		<p><a href="/home">Principal</a></p>
+		<p><a href="/">Principal</a></p>
 
 		<a href="/add">Aniadir</a>&nbsp;&nbsp;&nbsp;
 		<a href="/edit">Editar</a>&nbsp;&nbsp;&nbsp;
 		<a href="/remove">Borrar</a>&nbsp;&nbsp;&nbsp;
+		<a href="/list">Listado</a>&nbsp;&nbsp;&nbsp;
+		<button ng-click="getListaEstudiantes()">Carga lista estudiantes</button>
 		
 		<div ng-view></div>
+		
 		
 		<div ng-hide="true" >
 			{{listaAmigos | json}};
@@ -38,7 +41,7 @@
 		  	<my-directive></my-directive>
 		  	<button ng-click="getListaEstudiantes()">DI HOLAAA !</button>
 		  	<hr><hr><hr>
-		  	<p ng-repeat="st in listaEstudiantes | orderBy:'id'">{{st.id}}==>> {{st.name}} ==>> {{st.subject}} </p> -->
+		  	<p ng-repeat="st in listaEstudiantes | orderBy:'id'">{{st.id}}==>> {{st.name}} ==>> {{st.subject}} </p> 
 		</div>
 		
 	</div>

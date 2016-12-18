@@ -1,8 +1,6 @@
 package demo.controlador;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import demo.HelloGootApplication;
 import demo.modelo.Student;
+import demo.modelo.Subject;
 
 @RestController
 @RequestMapping(value="/rest/student")
@@ -76,7 +75,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value="/getSubjects", method=RequestMethod.GET)
-	public Map<Integer,String> getSubjects(){
+	public List<Subject> getSubjects(){
 		return HelloGootApplication.subjects;
 		
 	}
